@@ -1,17 +1,17 @@
-from . import constants as const 
+from utils import constants as const 
 from finances.models import Invoice
 
 
 def get_payload(invoice: Invoice) -> dict:
     payload = {
         "isSandbox" : False,
-        "storeID" : const.store_id,
-        "successUrl" : const.return_url+invoice.tracker.key,
-        "failUrl" : const.return_url+invoice.tracker.key,
-        "cancelUrl" : const.return_url+invoice.tracker.key,
+        "storeID" : const.STORE_ID,
+        "successUrl" : const.PAYMENT_RETURN_BASE_URL+invoice.tracker.key,
+        "failUrl" : const.PAYMENT_RETURN_BASE_URL+invoice.tracker.key,
+        "cancelUrl" : const.PAYMENT_RETURN_BASE_URL+invoice.tracker.key,
         "transactionID" : invoice.transaction_id,
         "transactionAmount" : invoice.amount,
-        "signature" : const.signature_key,
+        "signature" : const.SIGNATURE_KEY,
         "customerState" : invoice.tracker.key,
         "customerName" : invoice.client.get_full_name(),
         "customerEmail" : invoice.client.email,
