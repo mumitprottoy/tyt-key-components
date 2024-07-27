@@ -1,0 +1,1 @@
+class TherapistClientSamePersonError(Exception): pass
