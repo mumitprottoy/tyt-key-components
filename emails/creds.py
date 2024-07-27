@@ -1,22 +1,20 @@
+import os 
+
 email_creds = {
     'accounts': {
-        'email': 'accounts@theyellowtherapist.com',
-        'password': 'em@ilaccountstyt',
+        'email': os.environ['TYT_ACC_EMAIL_ADDR'],
+        'password': os.environ['TYT_ACC_EMAIL_PWD'],
     },
-
     'appointments': {
-        'email': 'appointments@theyellowtherapist.com',
-        'password': 'em@ilappointmentstyt',
+        'email': os.environ['TYT_APNT_EMAIL_ADDR'],
+        'password': os.environ['TYT_APNT_EMAIL_PWD'],
     },
-
     'operations': {
-        'email': 'operations@theyellowtherapist.com',
-        'password': 'operationstytweb',
+        'email': os.environ['TYT_OPS_EMAIL_ADDR'],
+        'password': os.environ['TYT_OPS_EMAIL_PWD'],
     }
 
 }
-
-
 
 office_email = email_creds['operations']['email']
 

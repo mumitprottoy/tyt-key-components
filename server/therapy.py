@@ -4,7 +4,7 @@ from utils.operations import get_serializable_dict
 from django.views.decorators.csrf import csrf_exempt
 
 
-
+# public endpoint
 @csrf_exempt
 def serve_therapy_types(request):
     therapy_types: list[dict] = list()

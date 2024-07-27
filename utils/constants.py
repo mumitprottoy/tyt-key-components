@@ -1,23 +1,17 @@
+import os
+
 FORM_FIELDS = {
-    
-    'signup': [
-        'first_name', 'last_name', 'username', 'email', 'password', 'confirm_password'
-    ],
-    
-    'signin': [
-        'username_or_email', 'password'
-    ]
+    'signup': ['first_name', 'last_name', 'username', 'email', 'password', 'confirm_password'],
+    'signin': ['username_or_email', 'password']
 }
-PAYMENT_BASE_URL = 'https://secure.aamarpay.com/jsonpost.php'
-SIGNATURE_KEY = 'bd32dd400c563ceeeceb60faf2a9efeb'
-STORE_ID = 'theyellowtherapist'
-PAYMENT_RETURN_BASE_URL = 'https://api.theyellowtherapist.com/payment-return/'
-TRX_CHECK_BASE_URL = "https://secure.aamarpay.com/api/v1/trxcheck/request.php?"
-APNT_BASE_URL = 'https://appointments.theyellowtherapist.com/'
-API_TOKEN = '@570Z703ZRGK'
-APNT_HOLD_LIMIT = 3600
-WEEKDAYS_ABBR = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+PAYMENT_BASE_URL = os.environ['TYT_PAYEMENT_BASE_URL']
+SIGNATURE_KEY = os.environ['TYT_SIGN_KEY']
+STORE_ID = os.environ['TYT_STORE_ID']
+PAYMENT_RETURN_BASE_URL = os.environ['TYT_PAYEMENT_RETURN_URL']
+TRX_CHECK_BASE_URL = os.environ['TYT_TRXN_CHECK_BASE_URL']
+APNT_BASE_URL = os.environ['TYT_APNT_BASE_URL']
+API_TOKEN = os.environ['TYT_PRIVATE_API_TOKEN']
+APNT_HOLD_LIMIT = int(os.environ['TYT_APNT_HOLD_LIMIT'])
 
 
 SLOT_DATETIME_FORMAT = '%d %b, %Y %a %H:%M'

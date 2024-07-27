@@ -1,3 +1,5 @@
-host = 'mail.theyellowtherapist.com'
-port = 25
-use_tls = True
+import os
+
+HOST = os.environ['TYT_EMAIL_HOST']
+POST = os.environ['TYT_EMAIL_PORT']
+USE_TLS = True

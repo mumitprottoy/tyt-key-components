@@ -7,7 +7,7 @@ from entrance.operations import create_user, authenticate_user
 @csrf_exempt
 @private
 @post_data_required
-def signup(request, *args, **kwargs):
+def signup(request, **kwargs):
     body = kwargs['body']
     response = create_user(body['data'], body['csrf'])
 
@@ -18,7 +18,7 @@ def signup(request, *args, **kwargs):
 @csrf_exempt
 @private
 @post_data_required
-def login(request, *args, **kwargs):
+def login(request, **kwargs):
     body = kwargs['body']
     response = authenticate_user(body['data'], body['csrf'])
 

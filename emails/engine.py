@@ -30,9 +30,9 @@ class EmailEngine:
     
     def __connect(self):
         return get_connection(
-            host=const.host,
-            port=const.port,
-            user_tls=const.use_tls,
+            host=const.HOST,
+            port=const.PORT,
+            user_tls=const.USE_TLS,
             username=self.cred.address,
             password=self.cred.password
         )
